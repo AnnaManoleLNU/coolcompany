@@ -4,7 +4,7 @@ const Box = (props) => {
   const [isHovered, setIsHovered] = useState(false);
   const imageStyle = {
     backgroundImage: `url(${props.backgroundImage})`,
-    opacity: isHovered ? 0.5 : 1
+    opacity: !isHovered ? 0.2 : 0.6
   }
 
   const textStyle = {
