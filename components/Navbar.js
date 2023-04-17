@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="logo">
-        <Image src='/./logo.png' width={50} height={50} />
+        <Image src='/logotype.png' width={50} height={50} />
       </div>
       <Link href='/'>STARTSIDA</Link>
       <Link href='/tjanster'>TJÄNSTER</Link>
