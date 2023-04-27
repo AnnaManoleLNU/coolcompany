@@ -9,13 +9,11 @@ import Footer from './Footer'
  */
 const Layout = ({ children }) => {
   return (
-    <div>
-      <div className="content">
+      <div className="relative pb-28">
       <Navbar />
       {children}
-      </div>
       <Footer />
-    </div>
+      </div>
   )
 }
 

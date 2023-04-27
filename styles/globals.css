@@ -1,46 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@200;600;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
-body {
-  background: #f2f2f2;
-  color: #333;
-  font-family: 'Archivo', sans-serif;
-  position: relative;
-  min-height: 100vh;
-  margin: 20px 100px 0px 100px;
-
+@layer components {
+  body {
+    @apply bg-light text-black min-h-screen mx-20 my-0;
+  }
+  nav a {
+    @apply ml-6;
+  }
 }
 
-a {
-  color: #333;
-  text-decoration: none;
-}
-
-.content {
-  padding-bottom: 50px;
-  
-}
-
-nav {
-  margin: 10px auto 80px;
-  padding: 10px 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-nav a {
-  margin-left: 25px;
-}
-
-nav .logo {
-  margin-right: auto;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-  text-align: center;
+/* Underline the active link */
+@layer utilities {
+  .nav-item {
+    @apply relative ml-10 tracking-[1px];
+  }
+  .nav-item::after {
+    @apply content-[''] bg-accent h-[2px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-300;
+  }
+  .nav-item:hover::after {
+    @apply w-[100%] transition-all duration-500;
+  }
 }

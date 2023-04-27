@@ -5,9 +5,10 @@
  */
 const Footer = () => {
   return (
-    <footer>
+    <footer className="absolute bottom-0 w-full h-10 text-center" >
       <p>Allel &copy; 2023</p>
     </footer>
+
   )
 }
 
