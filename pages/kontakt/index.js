@@ -11,7 +11,7 @@ const Contact = () => {
     <div className="contact">
 
 
-      <Article 
+      {/* <Article 
       title="Kontoret"
       content={[
         "Allel Elektrokonsult AB, Dianavägen 13, 115 42 Stockholm",
@@ -33,7 +33,7 @@ const Contact = () => {
         "Delägare, elingenjör, besiktningsman",
         "070-325 05 14",
         "jonas@allel.se"
-      ]} />
+      ]} /> */}
 
       <Form />
     </div>
