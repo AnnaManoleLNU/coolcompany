@@ -1,22 +1,31 @@
-import GridImageSquare from "@/components/GridImageSquare"
+import { useEffect, useState } from "react";
+import GridImageSquare from "@/components/GridImageSquare";
+import { getTjanster } from "@/sanity/sanity-tjanster";
 
-const images = [
-  { href: '/tjanster/projektering', src: '/light.jpg', alt: 'projektering', caption: 'Projektering' },
-  { href: '/tjanster/kontrolluppdrag', src: '/light2.jpg', alt: 'kontrolluppdrag', caption: 'Kontrolluppdrag' },
-  { href: '/tjanster/besiktning', src: '/light3.jpg', alt: 'besiktning', caption: 'Besiktning' },
-  { href: '/tjanster/revisionsbesiktning', src: '/building.jpg', alt: 'revisionsbesiktning', caption: 'Revisionsbesiktning' },
-]
-
-/**
- * Services page.
- *
- * @returns {HTMLElement} - Services page.
- */
 const Services = () => {
-  return (<div>
-    <GridImageSquare images={images} />
-  </div>
-  )
-}
+  const [tjansterData, setTjansterData] = useState([])
 
-export default Services
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getTjanster();
+      setTjansterData(data);
+    };
+    fetchData();
+  }, []);
+
+  const images = tjansterData.map((tjanst) => ({
+    href: `/tjanster/${tjanst.slug}`,
+    src: tjanst.image,
+    alt: tjanst.title,
+    caption: tjanst.title,
+    key: tjanst._id,
+  }));
+
+  return (
+    <div>
+      <GridImageSquare images={images} />
+    </div>
+  );
+};
+
+export default Services;

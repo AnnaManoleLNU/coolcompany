@@ -1,11 +1,6 @@
 import GridImageSquare from "@/components/GridImageSquare"
-
-const images = [
-  { href: '/projekt/1', src: '/light.jpg', alt: 'projekt1', caption: 'Projekt 1'},
-  { href: '/projekt/2', src: '/light2.jpg', alt: 'projekt2', caption: 'Projekt 2' },
-  { href: '/projekt/3', src: '/light3.jpg', alt: 'projekt3', caption: 'Projekt 3' },
-  { href: '/projekt/4', src: '/building.jpg', alt: 'projekt4', caption: 'Projekt 4' },
-]
+import { useEffect, useState } from "react"
+import { getProject } from "@/sanity/sanity-projekt"
 
 /**
  * Project page.
@@ -13,6 +8,24 @@ const images = [
  * @returns {HTMLElement} - Project page.
  */
 const Project = () => {
+  const [projectData, setProjectData] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getProject()
+      setProjectData(data)
+    }
+    fetchData()
+  }, [])
+
+  const images = projectData.map((project) => ({
+    href: `/projekt/${project.slug}`,
+    src: project.image,
+    alt: project.title,
+    caption: project.title,
+    key: project._id,
+  }))
+
   return (
     <div>
       <GridImageSquare images={images} />

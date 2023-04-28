@@ -1,14 +1,14 @@
-import { getProject } from "@/sanity/sanity-projekt";
+import { getTjanster } from "@/sanity/sanity-tjanster"
 import Article from "@/components/Article"
 import ImageFull from "@/components/ImageFull"
 
 export const getStaticPaths = async () => {
-  const projectData = await getProject();
-  const paths = projectData.map((project) => {
+  const tjansterData = await getTjanster();
+  const paths = tjansterData.map((tjanst) => {
     return {
-      params: { id: project.slug }
+      params: { id: tjanst.slug }
     }
-  })
+  });
 
   return {
     paths,
@@ -18,15 +18,15 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const slug = context.params.id
-  const projectData = await getProject()
-  const data = projectData.filter((project) => project.slug === slug)
+  const tjansterData = await getTjanster()
+  const data = tjansterData.filter((tjanst) => tjanst.slug === slug)
 
   return {
     props: { data }
   }
 }
 
-const ProjectDetails = ({ data }) => {
+const ServiceDetailPage = ({ data }) => {
   return (
     <div>
       <ImageFull src={data[0].image} alt={data[0].alt} />
@@ -35,6 +35,15 @@ const ProjectDetails = ({ data }) => {
       ))}
     </div>
   )
+
+
 }
 
-export default ProjectDetails
+export default ServiceDetailPage
+
+
+
+
+
+
+
