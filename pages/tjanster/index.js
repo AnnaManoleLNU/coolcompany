@@ -21,6 +21,8 @@ const Services = () => {
     key: tjanst._id,
   }));
 
+  console.log(images)
+
   return (
     <div>
       <GridImageSquare images={images} />

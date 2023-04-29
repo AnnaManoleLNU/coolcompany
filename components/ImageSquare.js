@@ -8,13 +8,16 @@ import Link from 'next/link'
  * @param {alt} alt - Image alt text.
  * @returns {HTMLElement} ImageSquare.
  */
-const ImageSquare = ({ href, src, alt, caption}) => (
+const ImageSquare = ({ href, src, alt, caption,key}) => (
   <div className="relative w-24 h-24 md:w-44 md:h-44 lg:md:w-96 lg:h-96">
     <Link href={href} >
       <Image
         src={src}
         alt={alt}
         fill
+        key={key}
+        // sizes="100vw"
+        // priority={true}
         className='object-cover object-center w-full h-full'
       />
       <div className="absolute inset-0 z-10 flex justify-center items-center">
