@@ -11,13 +11,14 @@ import Link from 'next/link'
 const ImageSquare = ({ href, src, alt, caption,key}) => (
   <div className="relative w-24 h-24 md:w-44 md:h-44 lg:md:w-96 lg:h-96">
     <Link href={href} >
-      <Image
+      <img
         src={src}
         alt={alt}
-        fill
         key={key}
-        // sizes="100vw"
-        // priority={true}
+        fill
+        sizes="(max-width: 768px) 100vw,
+        (max-width: 1200px) 50vw,
+        33vw"
         className='object-cover object-center w-full h-full'
       />
       <div className="absolute inset-0 z-10 flex justify-center items-center">
