@@ -7,11 +7,11 @@ const Services = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getTjanster();
-      setTjansterData(data);
-    };
-    fetchData();
-  }, []);
+      const data = await getTjanster()
+      setTjansterData(data)
+    }
+    fetchData()
+  }, [])
 
   const images = tjansterData.map((tjanst) => ({
     href: `/tjanster/${tjanst.slug}`,
@@ -19,9 +19,7 @@ const Services = () => {
     alt: tjanst.title,
     caption: tjanst.title,
     key: tjanst._id,
-  }));
-
-  console.log(images)
+  }))
 
   return (
     <div>

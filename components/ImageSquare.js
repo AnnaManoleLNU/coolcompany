@@ -1,4 +1,4 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
 
 /**
@@ -15,7 +15,7 @@ const ImageSquare = ({ href, src, alt, caption,key}) => (
         src={src}
         alt={alt}
         key={key}
-        fill
+        fill="true"
         sizes="(max-width: 768px) 100vw,
         (max-width: 1200px) 50vw,
         33vw"

@@ -20,12 +20,13 @@ async function handleSubmit(e) {
     body: JSON.stringify(data),
   })
 
-  if (res.ok) {
-    console.log('Message sent')
-  }
-  if (!res.ok) {
-    console.log('Message not sent')
-  }
+  // if (res.ok) {
+  //   console.log('Message sent')
+  // }
+  // if (!res.ok) {
+  //   console.log('Message not sent')
+  // }
+  // test!
 }
 
 /**
@@ -37,7 +38,7 @@ const Form = () => {
   return (
     <div className="flex justify-center mb-20 mt-20">
       <div className="w-3/5 flex flex-col justify-center">
-        <h1 className="text-mediumH">Eller kontakta oss genom formulär</h1>
+        <h1 className="text-mediumH">Kontakta oss genom formulär</h1>
         <form 
         onSubmit={handleSubmit}>
           {/* Name */}

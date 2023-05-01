@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 /**
  * Full width image component.
  *
@@ -9,10 +7,10 @@ import Image from 'next/image'
  */
 const ImageFull = ({ src, alt }) => (
   <div className="relative w-full h-64 md:h-96">
-    <Image
+    <img
       src={src}
       alt={alt}
-      fill
+      fill="true"
       className='object-cover object-center w-full h-full'
     />
   </div>
