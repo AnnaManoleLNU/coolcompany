@@ -5,7 +5,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
  *
  * @returns {HTMLElement} - Document.
  */
-export default function Document() {
+export default function Document () {
   return (
     <Html lang="sv">
       <Head>

@@ -1,12 +1,13 @@
 /**
  * Full width image component.
  *
- * @param {src} src - Image source.
- * @param {alt} alt - Image alt text.
+ * @param {*} src - Image source.
+ * @param {*} alt - Image alt text.
  * @returns {HTMLElement} ImageFull.
  */
 const ImageFull = ({ src, alt }) => (
   <div className="relative w-full h-64 md:h-96">
+   {/* eslint-disable-next-line @next/next/no-img-element */}
     <img
       src={src}
       alt={alt}

@@ -1,14 +1,14 @@
-import { getTjanster } from "@/sanity/sanity-tjanster"
-import Article from "@/components/Article"
-import ImageFull from "@/components/ImageFull"
+import { getTjanster } from '@/sanity/sanity-tjanster'
+import Article from '@/components/Article'
+import ImageFull from '@/components/ImageFull'
 
 export const getStaticPaths = async () => {
-  const tjansterData = await getTjanster();
+  const tjansterData = await getTjanster()
   const paths = tjansterData.map((tjanst) => {
     return {
       params: { id: tjanst.slug }
     }
-  });
+  })
 
   return {
     paths,
@@ -30,20 +30,11 @@ const ServiceDetailPage = ({ data }) => {
   return (
     <div>
       <ImageFull src={data[0].image} alt={data[0].alt} />
-      {data.map ((project) => (
+      {data.map((project) => (
         <Article key={project._id} data={project} />
       ))}
     </div>
   )
-
-
 }
 
 export default ServiceDetailPage
-
-
-
-
-
-
-

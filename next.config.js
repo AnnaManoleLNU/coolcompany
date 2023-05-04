@@ -1,9 +1,13 @@
 // /** @type {import('next').NextConfig} */
 
 module.exports = {
-  reactStrictMode: true,
+  // reactStrictMode: true,
   images: {
-    domains: ['cdn.sanity.io']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
+    ],
   },
-
 }

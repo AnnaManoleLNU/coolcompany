@@ -1,6 +1,6 @@
-import GridImageSquare from "@/components/GridImageSquare"
-import { useEffect, useState } from "react"
-import { getProject } from "@/sanity/sanity-projekt"
+import GridImageSquare from '@/components/GridImageSquare'
+import { useEffect, useState } from 'react'
+import { getProject } from '@/sanity/sanity-projekt'
 
 /**
  * Project page.
@@ -23,7 +23,7 @@ const Project = () => {
     src: project.image,
     alt: project.title,
     caption: project.title,
-    key: project._id,
+    key: project._id
   }))
 
   return (

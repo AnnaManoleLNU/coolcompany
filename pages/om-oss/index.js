@@ -1,6 +1,6 @@
-import Article from "@/components/Article"
-import { useEffect, useState } from "react"
-import { getAbout } from "@/sanity/sanity-om-oss"
+import Article from '@/components/Article'
+import { useEffect, useState } from 'react'
+import { getAbout } from '@/sanity/sanity-om-oss'
 
 /**
  * About page.
@@ -16,7 +16,6 @@ const About = () => {
     }
     fetchData()
   }, [])
-
 
   return (
     <div className="about">

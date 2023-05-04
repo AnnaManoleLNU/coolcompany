@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import GridImageSquare from "@/components/GridImageSquare";
-import { getTjanster } from "@/sanity/sanity-tjanster";
+import { useEffect, useState } from 'react'
+import GridImageSquare from '@/components/GridImageSquare'
+import { getTjanster } from '@/sanity/sanity-tjanster'
 
 const Services = () => {
   const [tjansterData, setTjansterData] = useState([])
@@ -18,14 +18,14 @@ const Services = () => {
     src: tjanst.image,
     alt: tjanst.title,
     caption: tjanst.title,
-    key: tjanst._id,
+    key: tjanst._id
   }))
 
   return (
     <div>
       <GridImageSquare images={images} />
     </div>
-  );
-};
+  )
+}
 
-export default Services;
+export default Services

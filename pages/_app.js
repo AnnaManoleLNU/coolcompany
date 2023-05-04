@@ -2,7 +2,16 @@ import Layout from '@/components/Layout'
 import '@/styles/globals.css'
 import Head from 'next/head'
 
-export default function App({ Component, pageProps }) {
+/**
+ * The app.
+ *
+ * @param {object} Component - The component.
+ * @param {object} Component.Component - The component.
+ * @param {object} Component.pageProps - The page props.
+ *
+ * @returns {HTMLElement} - The app.
+ */
+export default function App ({ Component, pageProps }) {
   return (
     <>
     <Head>

@@ -1,5 +1,4 @@
-import Article from "@/components/Article"
-import Form from "@/components/Form"
+import Form from '@/components/Form'
 
 /**
  * The contact page.
@@ -10,8 +9,7 @@ const Contact = () => {
   return (
     <div className="contact">
 
-
-      {/* <Article 
+      {/* <Article
       title="Kontoret"
       content={[
         "Allel Elektrokonsult AB, Dianavägen 13, 115 42 Stockholm",

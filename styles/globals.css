@@ -6,20 +6,79 @@
   body {
     @apply bg-light text-black min-h-screen mx-20 my-0;
   }
-  nav a {
-    @apply ml-6;
-  }
 }
 
 /* Underline the active link */
 @layer utilities {
-  .nav-item {
-    @apply relative ml-10 tracking-[1px];
+  a.nav-item {
+    @apply relative tracking-[1px] text-sm md:text-sm md:ml-4 lg:text-xl lg:ml-8;
   }
+
   .nav-item::after {
     @apply content-[''] bg-accent h-[2px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-300;
   }
+
   .nav-item:hover::after {
     @apply w-[100%] transition-all duration-500;
+  }
+}
+
+/* Don't show the hamburger-button or close-button */
+.hamburger-button {
+  display: none;
+}
+
+.close-button {
+  display: none;
+}
+
+/* Show the nav-links-mobile */
+@media (max-width: 790px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333333;
+    z-index: 50;
+  }
+
+  .nav-links-mobile .nav-item {
+    margin: 2rem 0;
+    font-size: 2rem;
+    color: #f2f2f2;
+  }
+
+  .hamburger-button {
+    display: block;
+  }
+
+  .close-button {
+    display: block;
+    cursor: pointer;
+    z-index: 51;
+  }
+}
+
+@media (min-width: 790px) {
+  .nav-links-mobile {
+    display: none;
+  }
+
+  .nav-item {
+    margin-left: 1rem;
+  }
+
+  .hamburger-menu {
+    display: none;
   }
 }

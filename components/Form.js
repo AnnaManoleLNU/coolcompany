@@ -1,6 +1,11 @@
-import Button from "./Button"
+import Button from './Button'
 
-async function handleSubmit(e) {
+/**
+ * Handle the submit event.
+ *
+ * @param {*} e  - The event.
+ */
+async function handleSubmit (e) {
   e.preventDefault()
 
   const form = e.target
@@ -8,25 +13,24 @@ async function handleSubmit(e) {
   const data = {
     name: form.name.value,
     email: form.email.value,
-    message: form.message.value,
+    message: form.message.value
   }
 
   // use the fetch API from "pages/api/contact.js" to send the data to the API route.
-  const res = await fetch("/api/contact", {
-    method: "POST",
+  const res = await fetch('/api/contact', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(data)
   })
 
-  // if (res.ok) {
-  //   console.log('Message sent')
-  // }
-  // if (!res.ok) {
-  //   console.log('Message not sent')
-  // }
-  // test!
+  if (res.ok) {
+    console.log('Message sent')
+  }
+  if (!res.ok) {
+    console.log('Message not sent')
+  }
 }
 
 /**
@@ -39,7 +43,7 @@ const Form = () => {
     <div className="flex justify-center mb-20 mt-20">
       <div className="w-3/5 flex flex-col justify-center">
         <h1 className="text-mediumH">Kontakta oss genom formulär</h1>
-        <form 
+        <form
         onSubmit={handleSubmit}>
           {/* Name */}
           <div className="w-full flex flex-col my-4">
@@ -75,11 +79,11 @@ const Form = () => {
             minLength={10}
             maxLength={500}
             className="w-full border-2 border-dark bg-light font-mono focus:border-accent focus:outline-none px-4 py-2" />
-          <Button buttonText={"skicka"} />
+          <Button buttonText={'skicka'} />
         </form>
       </div>
     </div>
-  );
+  )
 }
 
 export default Form

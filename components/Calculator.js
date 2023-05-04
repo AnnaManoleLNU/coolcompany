@@ -1,7 +1,13 @@
-import Button from "./Button"
+import Button from './Button'
 import { useState } from 'react'
 
-function calculateService(e, setPrice) {
+/**
+ * A function to calculate a service and set the price as the result.
+ *
+ * @param {Event} e - the event.
+ * @param {*} setPrice - the price to be set.
+ */
+function calculateService (e, setPrice) {
   e.preventDefault()
 
   const form = e.target
@@ -9,7 +15,7 @@ function calculateService(e, setPrice) {
   const data = {
     service: form.service.value,
     amount1: form.amount1.value,
-    amount2: form.amount2.value,
+    amount2: form.amount2.value
   }
 
   let res = 0
@@ -28,6 +34,11 @@ function calculateService(e, setPrice) {
   setPrice(res)
 }
 
+/**
+ * The calculator.
+ *
+ * @returns {HTMLElement} - The calculator.
+ */
 const Calculator = () => {
   const [price, setPrice] = useState(0)
 
@@ -51,7 +62,7 @@ const Calculator = () => {
         <input type="number" name="amount2" id="amount2" />
 
         {/* Submit the form */}
-        <Button buttonText={"beräkna"} />
+        <Button buttonText={'beräkna'} />
 
       </form>
 
@@ -60,7 +71,7 @@ const Calculator = () => {
         <p>Pris: {price}</p>
       </div>
     </div>
-  );
+  )
 }
 
-export default Calculator;
+export default Calculator

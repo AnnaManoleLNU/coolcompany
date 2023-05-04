@@ -1,10 +1,12 @@
-// The module that queries the Sanity API tjänster.
+import { groq } from 'next-sanity'
+import { client } from '@/sanity/lib/sanity.client'
 
-import { groq } from "next-sanity"
-import { client } from "@/sanity/lib/sanity.client"
-
-
-export async function getProject() {
+/**
+ * Gets the services schema from Sanity in JSON format.
+ *
+ * @returns {object} - The services.
+ */
+export async function getProject () {
   const query = groq`*[_type == 'projekt' ] {
   _id,
   title,
