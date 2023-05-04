@@ -1,0 +1,25 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "plugins": ["jsdoc"],
+  "rules":
+    {
+      "require-jsdoc": ["error", {
+          "require": {
+              "FunctionDeclaration": true,
+              "MethodDefinition": true,
+              "ClassDeclaration": true,
+              "ArrowFunctionExpression": false,
+              "FunctionExpression": false
+          }
+      }],
+      "jsdoc/require-jsdoc": ["error", {
+          "require": {
+              "FunctionDeclaration": true,
+              "MethodDefinition": true,
+              "ClassDeclaration": true,
+              "ArrowFunctionExpression": false,
+              "FunctionExpression": false
+          }
+      }]
+   }
+}
