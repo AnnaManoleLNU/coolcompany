@@ -6,7 +6,7 @@
  * @returns {HTMLElement} ImageFull.
  */
 const ImageFull = ({ src, alt }) => (
-  <div className="relative w-full h-64 md:h-96">
+  <div className=" relative w-full h-64 md:h-96">
    {/* eslint-disable-next-line @next/next/no-img-element */}
     <img
       src={src}

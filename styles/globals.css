@@ -4,7 +4,7 @@
 
 @layer components {
   body {
-    @apply bg-light text-black min-h-screen mx-20 my-0;
+    @apply bg-light text-black min-h-screen mx-20 my-0 sm:mx-10;
   }
 }
 
@@ -67,6 +67,10 @@
     cursor: pointer;
     z-index: 51;
   }
+
+  .logotype {
+    display: none;
+  }
 }
 
 @media (min-width: 790px) {
@@ -81,4 +85,5 @@
   .hamburger-menu {
     display: none;
   }
+
 }

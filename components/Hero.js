@@ -1,4 +1,5 @@
 import Button from './Button'
+import { useRouter } from 'next/router'
 
 /**
  * The hero, banner element.
@@ -9,6 +10,12 @@ import Button from './Button'
  * @returns {HTMLElement} - The hero.
  */
 const Hero = ({ heading, message }) => {
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.push('/projekt')
+  }
+
   return (
     <div className='flex items-center justify-center text-center mb-[600px] mt-64'>
       <div>
@@ -16,7 +23,7 @@ const Hero = ({ heading, message }) => {
         <h1 className='text-smallH font-sans lg:text-mediumH xl:text-largeH'>{heading}</h1>
         <p className='text-smallP font-mono lg:text-mediumP m-2'>{message}</p>
 
-        <Button buttonText={'se mer'} />
+        <Button buttonText={'se projekt'} onClick={handleClick}/>
       </div>
     </div>
   )

@@ -27,9 +27,12 @@ async function handleSubmit (e) {
 
   if (res.ok) {
     console.log('Message sent')
+    form.reset()
+    // TODO: show a success message
   }
   if (!res.ok) {
     console.log('Message not sent')
+    // TODO: show an error message
   }
 }
 
@@ -41,7 +44,7 @@ async function handleSubmit (e) {
 const Form = () => {
   return (
     <div className="flex justify-center mb-20 mt-20">
-      <div className="w-3/5 flex flex-col justify-center">
+      <div className="w-5/5 md:w-3/5 flex flex-col justify-center">
         <h1 className="text-mediumH">Kontakta oss genom formulär</h1>
         <form
         onSubmit={handleSubmit}>

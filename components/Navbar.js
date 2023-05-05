@@ -13,12 +13,10 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(isOpen => !isOpen);
-    console.log('the menu is open')
   }
 
   const closeMenu = () => {
     setIsOpen(false)
-    console.log('the menu is closed')
   }
 
   return (
@@ -31,7 +29,9 @@ const Navbar = () => {
           style={{
             width: '100%',
             height: 'auto',
-          }} />
+          }}
+          className="logotype"
+           />
       </Link>
       <div className={`nav-links ${isOpen ? 'nav-links-mobile' : ''}`}>
         <Link href="/" className="nav-item" onClick={closeMenu}>

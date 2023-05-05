@@ -35,7 +35,7 @@ module.exports = {
         lineHeight: '1.5rem',
         fontWeight: '300'
       }],
-      sm: '0.6rem',
+      sm: '0.8rem',
       base: '1rem',
       xl: '1.1rem',
     },
