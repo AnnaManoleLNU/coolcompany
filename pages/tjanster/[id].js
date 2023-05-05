@@ -18,9 +18,6 @@ export const getServerSideProps = async (context) => {
   const tjansterData = await getTjanster()
   const data = tjansterData.filter((tjanst) => tjanst.slug === slug)
   
-  console.log(data[0].image)
-  console.log(slug)
-  
   return {
     props: { data }
   }
