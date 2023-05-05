@@ -15,7 +15,7 @@ const ImageSquare = ({ href, src, alt, caption, key }) => (
   <Link href={href} >
     <div className="flex justify-center"> 
       <div className="relative w-96 h-96 md:w-64 md:h-64 lg:md:w-96 lg:h-96">
-      <img
+      <Image
         src={src}
         alt={alt}
         key={key}
