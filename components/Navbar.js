@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import Image from 'next/image'
+import logotype from '../public/logotype-final.png'
 
 /**
  * Navbar component.
@@ -11,7 +12,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsOpen(isOpen => !isOpen);
+    setIsOpen(isOpen => !isOpen)
   }
 
   const closeMenu = () => {
@@ -21,7 +22,8 @@ const Navbar = () => {
   return (
     <nav className="mx-auto mb-44 px-0 py-10 flex justify-end items-end text-lg font-sans">
       <Link href="/" className="mr-auto">
-        <Image src="/logotype-final.png"
+        
+        <Image src={logotype}
           alt="allel-logotype"
           priority="true"
           sizes="80vw"

@@ -4,13 +4,13 @@
 
 @layer components {
   body {
-    @apply bg-light text-black min-h-screen mx-20 my-0 sm:mx-10;
+    @apply bg-light text-black min-h-screen mx-2 my-0 md:mx-10 lg:mx-20;
   }
 }
 
 /* Underline the active link */
 @layer utilities {
-  a.nav-item {
+  .nav-item {
     @apply relative tracking-[1px] text-sm md:text-sm md:ml-4 lg:text-xl lg:ml-8;
   }
 
@@ -59,11 +59,11 @@
   }
 
   .hamburger-button {
-    display: block;
+    display: flex;
   }
 
   .close-button {
-    display: block;
+    display: flex;
     cursor: pointer;
     z-index: 51;
   }
