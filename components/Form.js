@@ -26,12 +26,11 @@ async function handleSubmit (e) {
   })
 
   if (res.ok) {
-    console.log('Message sent')
     form.reset()
     // TODO: show a success message
+    
   }
   if (!res.ok) {
-    console.log('Message not sent')
     // TODO: show an error message
   }
 }

@@ -1,4 +1,7 @@
 import Form from '@/components/Form'
+import Article from '@/components/Article'
+import { useEffect, useState } from 'react'
+import { getContact } from '@/sanity/sanity-kontakt'
 
 /**
  * The contact page.
@@ -6,32 +9,24 @@ import Form from '@/components/Form'
  * @returns {HTMLElement} - Contact page.
  */
 const Contact = () => {
+
+  const [contactData, setContactData] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getContact()
+      setContactData(data)
+    }
+    fetchData()
+  }, [])
+
+
   return (
     <div className="contact">
 
-      {/* <Article
-      title="Kontoret"
-      content={[
-        "Allel Elektrokonsult AB, Dianavägen 13, 115 42 Stockholm",
-        "08-663 88 99",
-        "allel@allel.se"
-      ]} />
-
-      <Article
-      title="Leif Eriksson"
-      content={[
-        "Delägare, elingenjör, besiktningsman, autoriserad av Elektriska Nämnden",
-        "070-325 73 96",
-        "leif@allel.se"
-      ]} />
-
-      <Article
-      title="Jonas Holmberg"
-      content={[
-        "Delägare, elingenjör, besiktningsman",
-        "070-325 05 14",
-        "jonas@allel.se"
-      ]} /> */}
+      {/* create an article for each object in the array */}
+      {contactData.map((data) => (
+        <Article key={data._id} data={data} />
+      ))}
 
       <Form />
     </div>

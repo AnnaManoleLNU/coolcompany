@@ -60,6 +60,8 @@
 
   .hamburger-button {
     display: flex;
+    cursor: pointer;
+    position: fixed;
   }
 
   .close-button {

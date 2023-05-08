@@ -1,8 +1,9 @@
+import { getProject } from '@/sanity/sanity-projekt'
 import Article from '@/components/Article'
 import ImageFull from '@/components/ImageFull'
-import { getProject } from '@/sanity/sanity-projekt'
 
-const ProjektDetailPage = ({ data }) => {
+
+const ProjectDetails = ({ data }) => {
   return (
     <div>
       <ImageFull src={data[0].image} alt={data[0].alt} />
@@ -13,14 +14,14 @@ const ProjektDetailPage = ({ data }) => {
   )
 }
 
-export const getServerSideProps = async (context) => {
-  const slug = context.params.id
-  const projektData = await getProject()
-  const data = projektData.filter((tjanst) => tjanst.slug === slug)
+  export const getServerSideProps = async (context) => {
+    const slug = context.params.id
+    const projectData = await getProject()
+    const data = projectData.filter((project) => project.slug === slug)
   
-  return {
-    props: { data }
+    return {
+      props: { data }
+    }
   }
-}
 
-export default ProjektDetailPage
+export default ProjectDetails

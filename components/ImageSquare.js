@@ -14,14 +14,15 @@ import Image from 'next/image'
 const ImageSquare = ({ href, src, alt, caption, key }) => (
   <Link href={href} >
     <div className="flex justify-center"> 
-      <div className="relative w-96 h-96 md:w-64 md:h-64 lg:md:w-96 lg:h-96">
+      <div className="relative w-96 h-96 md:w-64 md:h-64 lg:md:w-96 lg:h-96">        
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
         alt={alt}
         key={key}
         fill="true"
         placeholder="blur"
-        blurDataURL={src}
+        // blurDataURL={src}
         sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 33vw, 25vw"
         className='object-cover object-center w-full h-full'
       />

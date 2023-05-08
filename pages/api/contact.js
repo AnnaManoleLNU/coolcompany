@@ -40,7 +40,6 @@ export default async function ContactAPI (req, res) {
 
     return res.status(200).json({ name, email, message })
   } catch (error) {
-    console.log(error)
     res.status(500).json({ message: 'Message not sent' })
   }
 }
