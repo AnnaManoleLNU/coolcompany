@@ -23,7 +23,7 @@ const Footer = () => {
 
 
   return (
-      <footer className="absolute bottom-0 w-full text-center" >
+      <footer className="absolute bottom-0 w-full text-center text-light bg-black " >
         { /* create an article for the Kontoret name */}
       {footerData.map((footer) => (
         <Article key={footer._id} data={footer} />

@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer components {
-  body {
+  main {
     @apply bg-light text-black min-h-screen mx-2 my-0 md:mx-10 lg:mx-20;
+  }
+
+  body {
+    @apply bg-light text-black;
   }
 }
 

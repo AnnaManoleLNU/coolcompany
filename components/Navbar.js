@@ -20,7 +20,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="mx-auto mb-44 px-0 py-10 flex justify-end items-end text-lg font-sans">
+    <nav className="mx-auto mb-2 lg:mb-24 px-0 py-10 flex justify-end items-end text-lg font-sans">
       <Link href="/" className="mr-auto">
         
         <Image src={logotype}

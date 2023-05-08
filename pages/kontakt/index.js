@@ -22,13 +22,13 @@ const Contact = () => {
 
   return (
     <div className="contact">
+      <Form />
 
       {/* create an article for each object in the array */}
       {contactData.map((data) => (
         <Article key={data._id} data={data} />
       ))}
 
-      <Form />
     </div>
   )
 }
