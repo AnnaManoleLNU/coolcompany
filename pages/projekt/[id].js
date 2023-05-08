@@ -1,8 +1,8 @@
-import { getTjanster } from '@/sanity/sanity-tjanster'
 import Article from '@/components/Article'
 import ImageFull from '@/components/ImageFull'
+import { getProject } from '@/sanity/sanity-projekt'
 
-const ServiceDetailPage = ({ data }) => {
+const ProjektDetailPage = ({ data }) => {
   return (
     <div>
       <ImageFull src={data[0].image} alt={data[0].alt} />
@@ -15,15 +15,12 @@ const ServiceDetailPage = ({ data }) => {
 
 export const getServerSideProps = async (context) => {
   const slug = context.params.id
-  const tjansterData = await getTjanster()
-  const data = tjansterData.filter((tjanst) => tjanst.slug === slug)
-  
-  console.log(data[0].image)
-  console.log(slug)
+  const projektData = await getProject()
+  const data = projektData.filter((tjanst) => tjanst.slug === slug)
   
   return {
     props: { data }
   }
 }
 
-export default ServiceDetailPage
+export default ProjektDetailPage
