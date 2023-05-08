@@ -9,8 +9,8 @@ import { PortableText } from '@portabletext/react'
  */
 const Article = ({ data }) => {
   return (
-    <div className="flex justify-center">
-      <div className="w-5/5 md:w-3/5 flex flex-col justify-center">
+    <div className="flex justify-center w-full">
+      <div className="w-full md:w-3/5 flex flex-col justify-center">
         <div className="text-mediumH mb-4 mt-4">
           <div key={data._id}
             className="font-sans text-smallH md:text-smallH lg:text-mediumH"
