@@ -10,7 +10,7 @@
 
 /* Underline the active link */
 @layer utilities {
-  .nav-item {
+  a.nav-item {
     @apply relative tracking-[1px] text-sm md:text-sm md:ml-4 lg:text-xl lg:ml-8;
   }
 
@@ -59,13 +59,12 @@
   }
 
   .hamburger-button {
-    display: flex;
+    display: block;
     cursor: pointer;
-    position: fixed;
   }
 
   .close-button {
-    display: flex;
+    display: block;
     cursor: pointer;
     z-index: 51;
   }

@@ -1,14 +1,34 @@
+import { useState, useEffect } from 'react'
+import Article from '@/components/Article'
+import { getFooter } from '@/sanity/sanity-footer'
+
 /**
  * Footer component.
  *
  * @returns {HTMLElement} Footer.
  */
 const Footer = () => {
-  return (
-    <footer className="absolute bottom-0 w-full h-10 text-center" >
-      <p>Allel &copy; 2023</p>
-    </footer>
+  const [footerData, setFooterData] = useState([])
 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getFooter()
+      setFooterData(data)
+    }
+    fetchData()
+  }, [])
+
+  console.log(footerData)
+
+
+  return (
+      <footer className="absolute bottom-0 w-full text-center" >
+        { /* create an article for the Kontoret name */}
+      {footerData.map((footer) => (
+        <Article key={footer._id} data={footer} />
+        ))}
+      </footer>
   )
 }
 

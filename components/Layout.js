@@ -9,7 +9,7 @@ import Footer from './Footer'
  */
 const Layout = ({ children }) => {
   return (
-      <div className="relative pb-28">
+      <div className="min-h-screen relative pb-28">
       <Navbar />
       {children}
       <Footer />

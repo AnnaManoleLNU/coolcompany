@@ -67,7 +67,7 @@ const Navbar = () => {
       {/* Close button, if the menu is open */}
       {isOpen && (
         <button className="close-button" onClick={closeMenu}>
-          <svg viewBox="0 0 40 40" width="50" height="50">
+          <svg viewBox="0 0 40 20" width="50" height="50">
             <line x1="10" y1="10" x2="30" y2="30" stroke="#f2f2f2" strokeWidth="3" />
             <line x1="30" y1="10" x2="10" y2="30" stroke="#f2f2f2" strokeWidth="3" />
           </svg>
