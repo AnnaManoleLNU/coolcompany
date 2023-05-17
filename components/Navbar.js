@@ -41,9 +41,9 @@ const Navbar = () => {
         <Link href="/tjanster" className="nav-item" onClick={closeMenu}>
           TJÄNSTER
         </Link>
-        {/* <Link href="/kalkylator" className="nav-item" onClick={closeMenu}>
+        <Link href="/kalkylator" className="nav-item" onClick={closeMenu}>
           KALKYLATOR
-        </Link> */}
+        </Link>
         <Link href="/projekt" className="nav-item" onClick={closeMenu}>
           PROJEKT
         </Link>

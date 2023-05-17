@@ -19,8 +19,6 @@ const Footer = () => {
     fetchData()
   }, [])
 
-  console.log(footerData)
-
 
   return (
       <footer className="absolute bottom-0 w-full text-center text-light bg-black " >

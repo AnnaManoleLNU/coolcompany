@@ -20,6 +20,17 @@ export default async function ContactAPI (req, res) {
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
+  })
+
+  transporter.verify((error, success) => {
+    if (error) {
+      console.log(error)
+    } else {
+      console.log('Server is ready to take messages')
     }
   })
 

@@ -58,7 +58,7 @@ const Form = () => {
               maxLength={50}
               autoComplete="off"
               required
-              className="border-2 border-dark bg-light font-mono focus:border-accent focus:outline-none px-4 py-2" />
+              className="input" />
           </div>
           {/* Email */}
           <div className="w-full flex flex-col my-4">
@@ -70,7 +70,7 @@ const Form = () => {
               maxLength={50}
               name="email"
               required
-              autoComplete="off" className="border-2 border-dark bg-light font-mono focus:border-accent focus:outline-none px-4 py-2" />
+              autoComplete="off" className="input" />
           </div>
           {/* Message */}
           <label htmlFor="message" className="font-bold">Meddelande</label>
@@ -80,7 +80,7 @@ const Form = () => {
             required
             minLength={10}
             maxLength={500}
-            className="w-full border-2 border-dark bg-light font-mono focus:border-accent focus:outline-none px-4 py-2" />
+            className="w-full input" />
           <Button buttonText={'skicka'} />
         </form>
       </div>
