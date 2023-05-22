@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import Image from 'next/image'
-import logotype from '../public/logotype-final.png'
+import logotype from '../public/images/logotype-final.png'
 
 /**
  * Navbar component.
@@ -22,14 +22,14 @@ const Navbar = () => {
   return (
     <nav className="mx-auto mb-2 lg:mb-24 px-0 py-10 flex justify-end items-end text-lg font-sans">
       <Link href="/" className="mr-auto">
-        
+
         <Image src={logotype}
           alt="allel-logotype"
           priority="true"
           sizes="80vw"
           style={{
             width: '100%',
-            height: 'auto',
+            height: 'auto'
           }}
           className="logotype"
            />
@@ -41,9 +41,9 @@ const Navbar = () => {
         <Link href="/tjanster" className="nav-item" onClick={closeMenu}>
           TJÄNSTER
         </Link>
-        {/* <Link href="/kalkylator" className="nav-item" onClick={closeMenu}>
+        <Link href="/kalkylator" className="nav-item" onClick={closeMenu}>
           KALKYLATOR
-        </Link> */}
+        </Link>
         <Link href="/projekt" className="nav-item" onClick={closeMenu}>
           PROJEKT
         </Link>

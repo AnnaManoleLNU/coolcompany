@@ -5,7 +5,7 @@ import { client } from '@/sanity/lib/sanity.client'
 
 /**
  * Gets the about schema from Sanity in JSON format. Sort by created date ascending.
- * 
+ *
  * @returns {object} - The about schema.
  */
 export async function getAbout () {

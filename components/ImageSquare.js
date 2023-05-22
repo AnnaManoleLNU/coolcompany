@@ -1,20 +1,15 @@
-// import Image from 'next/image'
 import Link from 'next/link'
-import Image from 'next/image'
 
 /**
  * Square image component.
  *
  * @param {*} src - Image source.
- * @param {*} alt - Image alt text.
- * @param {*} caption - Image caption.
- * @param {*} key - Image key.
  * @returns {HTMLElement} ImageSquare.
  */
 const ImageSquare = ({ href, src, alt, caption, key }) => (
   <Link href={href} >
-    <div className="flex justify-center"> 
-      <div className="relative w-96 h-96 md:w-64 md:h-64 lg:md:w-96 lg:h-96">        
+    <div className="flex justify-center">
+      <div className="relative w-96 h-96 md:w-64 md:h-64 lg:md:w-96 lg:h-96">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}

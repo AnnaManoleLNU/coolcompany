@@ -1,21 +1,19 @@
 const DropDownMenu = ({ title, options, selectedOption, onSelect }) => {
-  
   const handleOptionSelect = (option) => {
-    onSelect(option);
-  };
+    onSelect(option)
+  }
 
   return (
-    <div className="flex flex-col">
+
+    <div className="w-5/5 md:w-3/5 flex flex-col">
       <label htmlFor={title} className="text-mediumH">
         {title}
       </label>
       <select
         name={title}
         id={title}
-        value={selectedOption || ""} // Handle null value by setting it to an empty string
+        value={selectedOption || ''} // Handle null value by setting it to an empty string
         onChange={(e) => handleOptionSelect(e.target.value)}
-        // save the selected option in the state
-        
         className="input"
       >
         <option value="" disabled>
@@ -28,7 +26,7 @@ const DropDownMenu = ({ title, options, selectedOption, onSelect }) => {
         ))}
       </select>
     </div>
-  );
-};
+  )
+}
 
-export default DropDownMenu;
+export default DropDownMenu

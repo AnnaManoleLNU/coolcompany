@@ -1,5 +1,24 @@
 // use nodemailer to send email
 import nodemailer from 'nodemailer'
+import validate from 'deep-email-validator'
+
+/**
+ * A function to validate email.
+ *
+ * @param {string} email - The email to validate.
+ * @returns {boolean} - true if email is valid, false if not.
+ */
+const validateEmail = async (email) => {
+  const res = await validate({
+    email,
+    validateRegex: true,
+    validateMx: true,
+    validateTypo: true,
+    validateDisposable: true,
+    validateSMTP: true
+  })
+  return res
+}
 
 /**
  * The API route for the contact form.
@@ -10,7 +29,11 @@ import nodemailer from 'nodemailer'
 export default async function ContactAPI (req, res) {
   const { name, email, message } = req.body
 
-  // TO DO: add validation for email
+  // validate email
+  const validEmail = await validateEmail(email)
+  if (!validEmail.valid) {
+    return res.status(400).json({ message: 'Invalid email' })
+  }
 
   // create reusable transporter object using the default SMTP transport
   const transporter = nodemailer.createTransport({

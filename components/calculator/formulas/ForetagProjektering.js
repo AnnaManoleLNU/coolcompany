@@ -1,64 +1,76 @@
 import { valdNiva } from './valdNiva.js'
+import { getFPLR } from '@/sanity/formulas/sanity-foretag-projektering-lägenhet-rambeskrivning.js'
 
-// The variables that are used in the formula.
-const bastidForetagBeskrivning = 1
-const tidPerMote = 1
-const prisForetag = 1
-
+const renderNumbers = async () => {
+  const data = await getFPLR()
+  return data
+}
 
 /**
- * A function that calculates the price for the foretag projektering service.
+ * A function that calculates the price for ForetagProjektering.
  *
- * @returns {number} price.
+ * @param {number} antalLagenheter - number of apartments.
+ * @param {number} antalMoten - number of meetings.
+ * @param {number} niva - level of the service.
+ * @param {number} valOmfattningOvrigaUtrymmen - choice of the scope of other areas.
+ * @returns {number} - the price for ForetagProjektering.
  */
-export function foretagProjektering (antalLagenheter, antalMoten, niva, valOmfattningOvrigaUtrymmen) {
+export async function foretagProjektering (antalLagenheter, antalMoten, niva, valOmfattningOvrigaUtrymmen) {
+  try {
+    const data = await renderNumbers()
+    const sanityData = data[0]
+    niva = valdNiva(niva, sanityData)
+    const prisForetag = sanityData.prisForetag
+    const tidPerMote = sanityData.tidPerMote
+    const bastidForetagBeskrivning = sanityData.bastidForetagBeskrivning
 
-  niva = valdNiva(niva)
+    // choice for antalLagenheter
+    if (antalLagenheter === '1-10') {
+      antalLagenheter = sanityData.antalLagenheter1Till10
+    }
+    if (antalLagenheter === '11-20') {
+      antalLagenheter = sanityData.antalLagenheter11Till20
+    }
+    if (antalLagenheter === '21-30') {
+      antalLagenheter = sanityData.antalLagenheter21Till30
+    }
+    if (antalLagenheter === '31-50') {
+      antalLagenheter = sanityData.antalLagenheter31Till50
+    }
+    if (antalLagenheter === '51-100') {
+      antalLagenheter = sanityData.antalLagenheter51Till100
+    }
+    if (antalLagenheter === '101-200') {
+      antalLagenheter = sanityData.antalLagenheter101Till200
+    }
+    if (antalLagenheter === '201-300') {
+      antalLagenheter = sanityData.antalLagenheter201Till300
+    }
+    if (antalLagenheter === '301-400') {
+      antalLagenheter = sanityData.antalLagenheter301Till400
+    }
+    if (antalLagenheter === '401-500') {
+      antalLagenheter = sanityData.antalLagenheter401Till500
+    }
 
-  // choice for antalLagenheter
-  if (antalLagenheter === '1-10') {
-    antalLagenheter = 1
-  } 
-  if (antalLagenheter === '11-20') {
-    antalLagenheter = 2
-  }
-  if (antalLagenheter === '21-30') {
-    antalLagenheter = 3
-  }
-  if (antalLagenheter === '31-50') {
-    antalLagenheter = 4
-  }
-  if (antalLagenheter === '51-100') {
-    antalLagenheter = 5
-  }
-  if (antalLagenheter === '101-200') {
-    antalLagenheter = 6
-  }
-  if (antalLagenheter === '201-300') {
-    antalLagenheter = 7
-  }
-  if (antalLagenheter === '301-400') {
-    antalLagenheter = 8
-  }
-  if (antalLagenheter === '401-500') {
-    antalLagenheter = 9
-  }
+    // choice for valOmfattningOvrigaUtrymmen
+    if (valOmfattningOvrigaUtrymmen === 'Liten') {
+      valOmfattningOvrigaUtrymmen = sanityData.valOmfattningOvrigaUtrymmenLiten
+    }
+    if (valOmfattningOvrigaUtrymmen === 'Mellan') {
+      valOmfattningOvrigaUtrymmen = sanityData.valOmfattningOvrigaUtrymmenMellan
+    }
+    if (valOmfattningOvrigaUtrymmen === 'Stor') {
+      valOmfattningOvrigaUtrymmen = sanityData.valOmfattningOvrigaUtrymmenStor
+    }
+    if (valOmfattningOvrigaUtrymmen === 'Mycket stor') {
+      valOmfattningOvrigaUtrymmen = sanityData.valOmfattningOvrigaUtrymmenMycketStor
+    }
 
-  // choice for valOmfattningOvrigaUtrymmen
-  if (valOmfattningOvrigaUtrymmen === 'Liten') {
-    valOmfattningOvrigaUtrymmen = 1
+    const price = (((bastidForetagBeskrivning + antalLagenheter + (antalLagenheter * valOmfattningOvrigaUtrymmen)) * niva) + (antalMoten * tidPerMote)) * prisForetag
+
+    return price
+  } catch (error) {
+    throw new Error(error)
   }
-  if (valOmfattningOvrigaUtrymmen === 'Mellan') {
-    valOmfattningOvrigaUtrymmen = 2
-  }
-  if (valOmfattningOvrigaUtrymmen === 'Stor') {
-    valOmfattningOvrigaUtrymmen = 3
-  }
-  if (valOmfattningOvrigaUtrymmen === 'Mycket stor') {
-    valOmfattningOvrigaUtrymmen = 4
-  }
-  
-  const price = (((bastidForetagBeskrivning + antalLagenheter + (antalLagenheter * valOmfattningOvrigaUtrymmen)) * niva) + (antalMoten * tidPerMote)) * prisForetag
-  console.log('the price is', price)
-  return price
 }

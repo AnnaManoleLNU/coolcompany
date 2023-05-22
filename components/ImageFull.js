@@ -1,8 +1,7 @@
 /**
  * Full width image component.
  *
- * @param {*} src - Image source.
- * @param {*} alt - Image alt text.
+ * @param {string} src - Image source.
  * @returns {HTMLElement} ImageFull.
  */
 const ImageFull = ({ src, alt }) => (

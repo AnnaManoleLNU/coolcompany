@@ -10,7 +10,6 @@ import { getFooter } from '@/sanity/sanity-footer'
 const Footer = () => {
   const [footerData, setFooterData] = useState([])
 
-
   useEffect(() => {
     const fetchData = async () => {
       const data = await getFooter()
@@ -19,13 +18,12 @@ const Footer = () => {
     fetchData()
   }, [])
 
-
   return (
       <footer className="absolute bottom-0 w-full text-center text-light bg-black " >
         { /* create an article for the Kontoret name */}
       {footerData.map((footer) => (
         <Article key={footer._id} data={footer} />
-        ))}
+      ))}
       </footer>
   )
 }

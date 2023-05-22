@@ -17,7 +17,7 @@ export const getServerSideProps = async (context) => {
   const slug = context.params.id
   const tjansterData = await getTjanster()
   const data = tjansterData.filter((tjanst) => tjanst.slug === slug)
-  
+
   return {
     props: { data }
   }

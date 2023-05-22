@@ -1,39 +1,5 @@
 import Button from './Button'
-
-/**
- * Handle the submit event.
- *
- * @param {*} e  - The event.
- */
-async function handleSubmit (e) {
-  e.preventDefault()
-
-  const form = e.target
-
-  const data = {
-    name: form.name.value,
-    email: form.email.value,
-    message: form.message.value
-  }
-
-  // use the fetch API from "pages/api/contact.js" to send the data to the API route.
-  const res = await fetch('/api/contact', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-
-  if (res.ok) {
-    form.reset()
-    // TODO: show a success message
-    
-  }
-  if (!res.ok) {
-    // TODO: show an error message
-  }
-}
+import { useState } from 'react'
 
 /**
  * Form page.
@@ -41,12 +7,44 @@ async function handleSubmit (e) {
  * @returns {HTMLElement} - Form page.
  */
 const Form = () => {
+  const [sucessMessage, setSucessMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    const form = e.target
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value
+    }
+
+    // use the fetch API from "pages/api/contact.js" to send the data to the API route.
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+
+    if (res.ok) {
+      form.reset()
+      setSucessMessage('Tack för ditt meddelande!')
+    }
+    if (!res.ok) {
+      form.reset()
+      setErrorMessage('Något gick fel, försök igen!')
+    }
+  }
   return (
     <div className="flex justify-center mb-20 mt-20">
       <div className="w-5/5 md:w-3/5 flex flex-col justify-center">
         <h1 className="text-mediumH">Kontaktformulär</h1>
         <form
-        onSubmit={handleSubmit}>
+          onSubmit={handleSubmit}>
           {/* Name */}
           <div className="w-full flex flex-col my-4">
             <label htmlFor="name" className="font-bold">Namn</label>
@@ -83,6 +81,8 @@ const Form = () => {
             className="w-full input" />
           <Button buttonText={'skicka'} />
         </form>
+      {errorMessage && <p className="text-accent">{errorMessage}</p>}
+      {sucessMessage && <p className="font-bold">{sucessMessage}</p>}
       </div>
     </div>
   )

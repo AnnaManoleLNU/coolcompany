@@ -1,71 +1,82 @@
-// The variables that are used in the formula.
-const besiktningPrivatProtokoll = 1
-const besiktningPrivatDokumentation = 1
-const prisPrivatBesiktningsman = 1
+import { getPB } from '@/sanity/formulas/sanity-privatperson-besiktning.js'
+
+// The data from Sanity.
+const renderNumbers = async () => {
+  const data = await getPB()
+  return data
+}
 
 /**
  * A function that calculates the price for the privatperson besiktning service.
  *
- * @returns {number} price.
+ * @param {number} valdAntalRum - The number of rooms chosen.
+ * @param {number} besiktningMilersattning - The distance from Stockholm chosen.
+ * @param {number} antalBesiktningstillfallen - The number of visits chosen.
+ * @param {number} dokumentation - if the customer has documentation.
+ *
+ * @returns {number} - the price.
  */
-export function privatpersonBesiktning(valdAntalRum, besiktningMilersattning, antalBesiktningstillfallen, dokumentation) {
-    // if the answer is yes then add besiktningPrivatDokumentation to the formula
-    // antalBesiktningstillfallen is the number of meetings
-
+export async function privatpersonBesiktning (valdAntalRum, besiktningMilersattning, antalBesiktningstillfallen, dokumentation) {
+  try {
     let price = 0
+
+    const data = await renderNumbers()
+    const sanityData = data[0]
+    const besiktningPrivatProtokoll = sanityData.besiktningPrivatProtokoll
+    let besiktningPrivatDokumentation = sanityData.besiktningPrivatDokumentation
+    const prisPrivatBesiktningsman = sanityData.prisPrivatBesiktningsman
 
     // choices for chosen number of rooms
     if (valdAntalRum === '1-5') {
-        valdAntalRum = 1
-        console.log('valdAntalRum is', valdAntalRum)
+      valdAntalRum = sanityData.valdAntalRum1Till5
     }
     if (valdAntalRum === '6-12') {
-        valdAntalRum = 2
+      valdAntalRum = sanityData.valdAntalRum6Till12
     }
     if (valdAntalRum === '13-20') {
-        valdAntalRum = 3
+      valdAntalRum = sanityData.valdAntalRum13Till20
     }
 
-    
     // chosen distance from Stockholm
     if (besiktningMilersattning === '0-20') {
-        besiktningMilersattning = 1
-        console.log('besiktningMilersattning is', besiktningMilersattning)
+      besiktningMilersattning = sanityData.besiktningMilersattning0Till20
     }
     if (besiktningMilersattning === '21-30') {
-        besiktningMilersattning = 2
+      besiktningMilersattning = sanityData.besiktningMilersattning21Till30
     }
     if (besiktningMilersattning === '31-40') {
-        besiktningMilersattning = 3
+      besiktningMilersattning = sanityData.besiktningMilersattning31Till40
     }
     if (besiktningMilersattning === '41-50') {
-        besiktningMilersattning = 4
+      besiktningMilersattning = sanityData.besiktningMilersattning41Till50
     }
     if (besiktningMilersattning === '51-60') {
-        besiktningMilersattning = 5
+      besiktningMilersattning = sanityData.besiktningMilersattning51Till60
     }
     if (besiktningMilersattning === '61-70') {
-        besiktningMilersattning = 6
+      besiktningMilersattning = sanityData.besiktningMilersattning61Till70
     }
     if (besiktningMilersattning === '71-80') {
-        besiktningMilersattning = 7
+      besiktningMilersattning = sanityData.besiktningMilersattning71Till80
     }
     if (besiktningMilersattning === '81-90') {
-        besiktningMilersattning = 8
+      besiktningMilersattning = sanityData.besiktningMilersattning81Till90
     }
     if (besiktningMilersattning === '91-100') {
-        besiktningMilersattning = 9
+      besiktningMilersattning = sanityData.besiktningMilersattning91Till100
     }
-    
+
     if (dokumentation === 'Ja') {
-        price += (((valdAntalRum + besiktningMilersattning + besiktningPrivatProtokoll) * antalBesiktningstillfallen) + besiktningPrivatDokumentation) * prisPrivatBesiktningsman
-        console.log('the price is', price)
+      price = (((valdAntalRum + besiktningMilersattning + besiktningPrivatProtokoll) * antalBesiktningstillfallen) + besiktningPrivatDokumentation) * prisPrivatBesiktningsman
     }
 
     if (dokumentation === 'Nej') {
-        price += (((valdAntalRum + besiktningMilersattning + besiktningPrivatProtokoll) * antalBesiktningstillfallen)) * prisPrivatBesiktningsman
-        console.log('the price is', price)
-    }   
+      besiktningPrivatDokumentation = 0
+      price = (((valdAntalRum + besiktningMilersattning + besiktningPrivatProtokoll) * antalBesiktningstillfallen) + besiktningPrivatDokumentation) * prisPrivatBesiktningsman
+    }
 
     return price
+  } catch (error) {
+    throw new Error(error)
+  }
 }

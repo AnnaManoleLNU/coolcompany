@@ -5,7 +5,7 @@ import { client } from '@/sanity/lib/sanity.client'
 
 /**
  * Gets the contact schema from Sanity in JSON format. Sort by created date ascending.
- * 
+ *
  * @returns {object} - The contact schema.
  */
 export async function getContact () {
@@ -17,4 +17,3 @@ export async function getContact () {
 
   return client.fetch(query)
 }
-

@@ -9,7 +9,6 @@ import { getContact } from '@/sanity/sanity-kontakt'
  * @returns {HTMLElement} - Contact page.
  */
 const Contact = () => {
-
   const [contactData, setContactData] = useState([])
   useEffect(() => {
     const fetchData = async () => {
@@ -18,7 +17,6 @@ const Contact = () => {
     }
     fetchData()
   }, [])
-
 
   return (
     <div className="contact">

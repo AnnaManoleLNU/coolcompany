@@ -4,8 +4,7 @@ import { useRouter } from 'next/router'
 /**
  * The hero, banner element.
  *
- * @param {*} heading - The heading of the hero.
- * @param {*} message - The message of the hero.
+ * @param {string} heading - The heading of the hero.
  *
  * @returns {HTMLElement} - The hero.
  */

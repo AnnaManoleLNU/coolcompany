@@ -1,23 +1,22 @@
-// Should also come from sanity.io
-
-
 /**
- * Check the value of the selected level and convert it to a number.
+ * A function that sets the level of the service according to the user input. Data is fetched from Sanity.
  *
- * @param {string} niva - The value of the selected level.
+ * @param {string} niva - The level of the service.
+ * @param {object} data - The data from Sanity.
+ * @returns {number} - the level of the service.
  */
-export function valdNiva (niva) {
+export function valdNiva (niva, data) {
   if (niva === 'Enkel') {
-    niva = 1
+    niva = data.nivaEnkel
   }
   if (niva === 'Bas') {
-    niva = 2
+    niva = data.nivaBas
   }
   if (niva === 'Exklusiv') {
-    niva = 3
+    niva = data.nivaExklusiv
   }
   if (niva === 'Exklusiv Plus') {
-    niva = 4
+    niva = data.nivaExklusivPlus
   }
 
   return niva

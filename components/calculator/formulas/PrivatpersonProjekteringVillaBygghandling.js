@@ -1,22 +1,32 @@
-import { valdNiva } from "./valdNiva"
+import { valdNiva } from './valdNiva'
+import { getPPVB } from '@/sanity/formulas/sanity-privatperson-projektering-villa-bygghandling'
 
-// The variables that are used in the formula.
-const tidPerMote = 1 //
-const bastidPrivatVillaRitningar = 1 //
-const tidPerRum = 1 //
-const prisPrivat = 1 //
+const renderNumbers = async () => {
+  const data = await getPPVB()
+  return data
+}
 
 /**
  * A function that calculates the price for the privat person projektering villa bygghandling service.
  *
- * @returns {number} price
+ * @param {number} antalMoten - The number of meetings.
+ * @param {number} antalRum - The number of rooms.
+ * @param {number} niva - The level of the service.
+ * @returns {number} - the price.
  */
-export function privatpersonProjekteringVillaBygghandling (antalMoten, antalRum, niva) {
-  
-  niva = valdNiva(niva)
-  
-  const price = ((antalMoten * tidPerMote) + ((bastidPrivatVillaRitningar * niva) + (antalRum * tidPerRum * niva))) * prisPrivat
+export async function privatpersonProjekteringVillaBygghandling (antalMoten, antalRum, niva) {
+  try {
+    const data = await renderNumbers()
+    const sanityData = data[0]
+    niva = valdNiva(niva, sanityData)
+    const tidPerMote = sanityData.tidPerMote
+    const bastidPrivatVillaBeskrivning = sanityData.bastidPrivatVillaBeskrivning
+    const tidPerRum = sanityData.tidPerRum
+    const prisPrivat = sanityData.prisPrivat
 
-  console.log('the price is', price)
-  return price
+    const price = ((antalMoten * tidPerMote) + (bastidPrivatVillaBeskrivning * niva) + (antalRum * tidPerRum * niva)) * prisPrivat
+    return price
+  } catch (error) {
+    throw new Error(error)
+  }
 }

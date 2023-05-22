@@ -1,13 +1,9 @@
-import Calculator2 from '@/components/Calculator2';
+import Calculator from '@/components/Calculator'
 
 const Kaylkylator = () => {
-
-
   return (
-    <div>
-      <Calculator2 />
-    </div>
-  );
-};
+      <Calculator />
+  )
+}
 
-export default Kaylkylator;
+export default Kaylkylator
