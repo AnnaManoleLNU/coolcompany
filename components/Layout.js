@@ -13,7 +13,6 @@ const Layout = ({ children }) => {
       <main>
         <Navbar />
         {children}
-
       </main>
       <Footer />
     </div>

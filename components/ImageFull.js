@@ -5,7 +5,8 @@
  * @returns {HTMLElement} ImageFull.
  */
 const ImageFull = ({ src, alt }) => (
-  <div className=" relative w-full h-64 md:h-96">
+<div className="md:w-5/5 w-full">
+  <div className="relative w-full h-64 md:h-64">
    {/* eslint-disable-next-line @next/next/no-img-element */}
     <img
       src={src}
@@ -14,6 +15,7 @@ const ImageFull = ({ src, alt }) => (
       className='object-cover object-center w-full h-full'
     />
   </div>
+</div>
 )
 
 export default ImageFull

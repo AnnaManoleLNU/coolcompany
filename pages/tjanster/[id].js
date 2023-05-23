@@ -3,11 +3,12 @@ import Article from '@/components/Article'
 import ImageFull from '@/components/ImageFull'
 
 const ServiceDetailPage = ({ data }) => {
+  console.log(data)
   return (
-    <div>
+    <div className='flex flex-col justify-center items-center'>
       <ImageFull src={data[0].image} alt={data[0].alt} />
-      {data.map((project) => (
-        <Article key={project._id} data={project} />
+      {data.map((tjanst) => (
+        <Article key={tjanst._id} data={tjanst} />
       ))}
     </div>
   )

@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react'
 import GridImageSquare from '@/components/GridImageSquare'
 import { getTjanster } from '@/sanity/sanity-tjanster'
 
+/**
+ * Services page.
+ *
+ * @returns {HTMLElement} - Services page.
+ */
 const Services = () => {
   const [tjansterData, setTjansterData] = useState([])
 

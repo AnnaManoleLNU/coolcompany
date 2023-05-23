@@ -5,7 +5,7 @@ const DropDownMenu = ({ title, options, selectedOption, onSelect }) => {
 
   return (
 
-    <div className="w-5/5 md:w-3/5 flex flex-col">
+    <div className="flex flex-col justify-center items-center">
       <label htmlFor={title} className="text-mediumH">
         {title}
       </label>

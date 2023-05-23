@@ -19,14 +19,15 @@ const Contact = () => {
   }, [])
 
   return (
-    <div className="contact">
+    <div>
       <Form />
 
       {/* create an article for each object in the array */}
-      {contactData.map((data) => (
-        <Article key={data._id} data={data} />
-      ))}
-
+      <div>
+        {contactData.map((data) => (
+          <Article key={data._id} data={data} />
+        ))}
+      </div>
     </div>
   )
 }

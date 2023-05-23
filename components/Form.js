@@ -32,15 +32,21 @@ const Form = () => {
 
     if (res.ok) {
       form.reset()
+      // hide the error message
+      setErrorMessage('')
+      // show the success message
       setSucessMessage('Tack för ditt meddelande!')
     }
     if (!res.ok) {
       form.reset()
+      // hide the success message
+      setSucessMessage('')
+      // show the error message
       setErrorMessage('Något gick fel, försök igen!')
     }
   }
   return (
-    <div className="flex justify-center mb-20 mt-20">
+    <div className="flex justify-center mb-14 mt-20">
       <div className="w-5/5 md:w-3/5 flex flex-col justify-center">
         <h1 className="text-mediumH">Kontaktformulär</h1>
         <form

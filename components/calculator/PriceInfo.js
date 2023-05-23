@@ -1,6 +1,6 @@
 const PriceInfo = ({ options, price }) => {
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center text-center">
       <h2 className="text-mediumH">Dina val</h2>
       {/* for each option add to the paragraph */}
       <div className="border-b">
@@ -18,7 +18,7 @@ const PriceInfo = ({ options, price }) => {
       <h2 className="text-mediumH text-accent">
         {price} kr
       </h2>
-      <p>Notering: priserna är uppskattningar.</p>
+      <em>Notering: priserna är uppskattningar.</em>
     </div >
   )
 }

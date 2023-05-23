@@ -5,7 +5,7 @@ import StartOverButton from './StartOverButton'
 
 const ParentForm = ({ selectedOptions, handleSelectedOption, handleCalculate, startAgain }) => {
   return (
-    <div id='parent'>
+    <div className="flex flex-col justify-center items-center text-center">
       {selectedOptions['Jag är'] === undefined && (
         <DropDownMenu
           title="Jag är"
