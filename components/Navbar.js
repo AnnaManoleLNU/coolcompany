@@ -20,13 +20,13 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="mx-auto mb-2 lg:mb-24 px-0 py-10 flex justify-end items-end text-lg font-sans">
+    <nav className="mx-auto mb-2 md:mb-12 lg:mb-24 px-0 py-10 flex justify-end items-end text-lg font-sans">
       <Link href="/" className="mr-auto">
 
         <Image src={logotype}
           alt="allel-logotype"
           priority="true"
-          sizes="80vw"
+          sizes="70vw"
           style={{
             width: '100%',
             height: 'auto'
@@ -36,22 +36,22 @@ const Navbar = () => {
       </Link>
       <div className={`nav-links ${isOpen ? 'nav-links-mobile' : ''}`}>
         <Link href="/" className="nav-item" onClick={closeMenu}>
-          STARTSIDA
+          hem
         </Link>
         <Link href="/tjanster" className="nav-item" onClick={closeMenu}>
-          TJÄNSTER
+          tjänster
         </Link>
         <Link href="/kalkylator" className="nav-item" onClick={closeMenu}>
-          KALKYLATOR
+          kalkylator
         </Link>
         <Link href="/projekt" className="nav-item" onClick={closeMenu}>
-          PROJEKT
+          projekt
         </Link>
         <Link href="/om-oss" className="nav-item" onClick={closeMenu}>
-          OM OSS
+          om oss
         </Link>
         <Link href="/kontakt" className="nav-item" onClick={closeMenu}>
-          KONTAKT
+          kontakt
         </Link>
       </div>
       {/* Hamburger button, if the menu is not open */}

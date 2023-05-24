@@ -10,10 +10,10 @@ import Footer from './Footer'
 const Layout = ({ children }) => {
   return (
     <div className="min-h-screen relative pb-44">
-      <main>
+      <div className='mx-2 my-0 md:mx-10 lg:mx-20'>
         <Navbar />
         {children}
-      </main>
+      </div>
       <Footer />
     </div>
   )

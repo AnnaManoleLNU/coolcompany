@@ -1,16 +1,20 @@
 import { getTjanster } from '@/sanity/sanity-tjanster'
 import Article from '@/components/Article'
 import ImageFull from '@/components/ImageFull'
+import Head from 'next/head'
 
 const ServiceDetailPage = ({ data }) => {
-  console.log(data)
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <main>
+      <Head>
+        <title>Allel - {data[0].title}</title>
+        <meta name='description' content={data[0].title} />
+      </Head>
       <ImageFull src={data[0].image} alt={data[0].alt} />
       {data.map((tjanst) => (
         <Article key={tjanst._id} data={tjanst} />
       ))}
-    </div>
+    </main>
   )
 }
 

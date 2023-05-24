@@ -37,7 +37,7 @@ module.exports = {
       }],
       sm: '0.8rem',
       base: '1rem',
-      xl: '1.1rem'
+      xl: '1.2rem'
     },
     fontFamily: {
       sans: ['Archivo', 'sans-serif'],

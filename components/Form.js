@@ -46,8 +46,8 @@ const Form = () => {
     }
   }
   return (
-    <div className="flex justify-center mb-14 mt-20">
-      <div className="w-5/5 md:w-3/5 flex flex-col justify-center">
+    <div className="flex mb-14 mt-20">
+      <div className=" md:w-4/5 flex flex-col justify-center">
         <h1 className="text-mediumH">Kontaktformulär</h1>
         <form
           onSubmit={handleSubmit}>

@@ -15,9 +15,6 @@ import { privatpersonProjekteringVillaRambeskrivning } from './PrivatpersonProje
  */
 export async function calculateService (options) {
   let price
-  // e.preventDefault()
-
-  // console.log('the options are', options)
 
   let hasPrivatPerson = false
   let hasForetag = false

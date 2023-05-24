@@ -1,6 +1,7 @@
 import GridImageSquare from '@/components/GridImageSquare'
 import { useEffect, useState } from 'react'
 import { getProject } from '@/sanity/sanity-projekt'
+import Head from 'next/head'
 
 /**
  * Project page.
@@ -27,9 +28,13 @@ const Project = () => {
   }))
 
   return (
-    <div>
+    <main>
+      <Head>
+        <title>Allel - Projekt</title>
+        <meta name="description" content="Allel - Projekt" />
+      </Head>
       <GridImageSquare images={images} />
-    </div>
+    </main>
   )
 }
 

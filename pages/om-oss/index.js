@@ -1,6 +1,7 @@
 import Article from '@/components/Article'
 import { useEffect, useState } from 'react'
 import { getAbout } from '@/sanity/sanity-om-oss'
+import Head from 'next/head'
 
 /**
  * About page.
@@ -18,12 +19,16 @@ const About = () => {
   }, [])
 
   return (
-    <div className="about">
+    <main>
+      <Head>
+        <title>Allel - Om oss</title>
+        <meta name="description" content="Allel - Om oss" />
+      </Head>
       {/* create an article for each object in the array */}
       {aboutData.map((data) => (
         <Article key={data._id} data={data} />
       ))}
-    </div>
+    </main>
   )
 }
 

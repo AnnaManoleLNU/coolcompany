@@ -9,20 +9,18 @@ import { PortableText } from '@portabletext/react'
  */
 const Article = ({ data }) => {
   return (
-    <div className="flex justify-center w-full mt-9">
-      <div className="w-full md:w-3/5 flex flex-col justify-center">
+    <article className="flex justify-center w-full mt-9">
+      <div className="w-full flex flex-col justify-center">
         <div className="text-mediumH mb-4 mt-4">
-          <div key={data._id}
+          <h1 key={data._id}
             className="font-sans text-smallH md:text-smallH lg:text-mediumH"
-          >{data.title}</div>
+          >{data.title}</h1>
         </div>
-        <div className="font-mono mb-4 text-smallP md:text-smallP lg:text-mediumP" >
-          <div key={data._id}>
+        <div className="font-mono mb-4 text-smallP md:text-smallP lg:text-mediumP" key={data._id}>
             <PortableText value={data.content} />
-          </div>
         </div>
       </div>
-    </div>
+    </article>
   )
 }
 

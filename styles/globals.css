@@ -4,19 +4,24 @@
 
 @layer components {
   main {
-    @apply bg-light text-black min-h-screen mx-2 my-0 md:mx-10 lg:mx-20;
+    @apply bg-light text-black mx-2 my-0 md:mx-10 lg:mx-20;
   }
 
-  body {
-    @apply bg-light text-black;
+  html, body {
+    @apply bg-light text-black h-full;
   }
 
+  /* highlight the selected text with different colors */
+  ::selection {
+    @apply bg-black text-light;
+  }
 }
+
 
 /* Underline the active link */
 @layer utilities {
   a.nav-item {
-    @apply relative tracking-[1px] text-sm md:text-sm md:ml-4 lg:text-xl lg:ml-8;
+    @apply relative tracking-[1px] md:ml-4 lg:text-base lg:ml-6;
   }
 
   .nav-item::after {
@@ -118,5 +123,4 @@ select{
   .hamburger-menu {
     display: none;
   }
-
 }

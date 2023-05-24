@@ -18,6 +18,7 @@ export default function App ({ Component, pageProps }) {
       <link rel="icon" href="/images/favicon-filled.png" />
         <title>Allel Elektrokonsult AB</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="keywords" content="Elkonsult, stockholm, projektering, elritningar, elingenjör, förfrågningsunderlag, bygghandlingar,elbesiktning, rambeskrivning"></meta>
       </Head>
       <Layout>
         <Component {...pageProps} />

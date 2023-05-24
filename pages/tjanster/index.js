@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import GridImageSquare from '@/components/GridImageSquare'
 import { getTjanster } from '@/sanity/sanity-tjanster'
+import Head from 'next/head'
 
 /**
  * Services page.
@@ -27,9 +28,13 @@ const Services = () => {
   }))
 
   return (
-    <div>
+    <main>
+      <Head>
+        <title>Allel - Tjänster</title>
+        <meta name="description" content="Allel - Tjänster" />
+      </Head>
       <GridImageSquare images={images} />
-    </div>
+    </main>
   )
 }
 
