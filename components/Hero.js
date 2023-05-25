@@ -11,7 +11,7 @@ import ButtonFocus from './ButtonFocus'
  *
  * @returns {HTMLElement} - The hero.
  */
-const Hero = ({ heading, message }) => {
+const Hero = ({ heading, message, allProjectsClick }) => {
   const [showLetters, setShowLetters] = useState(false)
 
   useEffect(() => {
@@ -26,20 +26,21 @@ const Hero = ({ heading, message }) => {
     trail: 50
   })
 
-  const handleClick = () => {
-    window.scrollTo(0, document.body.scrollHeight)
+  // Go to all projects
+  const router = useRouter()
+  const handleClickNewProjects = () => {
+    allProjectsClick()
   }
 
-  const router = useRouter()
   const allProjects = () => {
     router.push('/projekt')
   }
 
   return (
-    <div className='flex items-center justify-center text-center mb-[200px] mt-64'>
+    <div className='flex items-center justify-center text-center mb-[200px] mt-[250px]'>
       <div>
-        {/* By default the text is smallH, but it will be mediumH on medium screens and largeH on large screens */}
-        <h1 className='text-smallH font-sans lg:text-mediumH xl:text-largeH'>
+        {/* Mobile first */}
+        <h1 className='text-mediumH font-sans xl:text-largeH'>
           {transitions((props, item, _, index) => (
             <animated.span
               key={index}
@@ -52,7 +53,8 @@ const Hero = ({ heading, message }) => {
         </h1>
         <h2 className='text-smallP font-mono lg:text-mediumP m-2'>{message}</h2>
         <div className='flex justify-center text-center items-center gap-4'>
-          <Button buttonText={'nya projekt'} onClick={handleClick} />
+          <Button buttonText={'nya projekt'} onClick={handleClickNewProjects}
+           />
           <ButtonFocus buttonText={'alla projekt'} onClick={allProjects} />
         </div>
       </div>

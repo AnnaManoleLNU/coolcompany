@@ -20,15 +20,15 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="mx-auto mb-2 md:mb-12 lg:mb-24 px-0 py-10 flex justify-end items-end text-lg font-sans">
+    <nav className="mx-auto mb-2 py-10 flex justify-end items-end text-lg font-sans lg:mb-16">
       <Link href="/" className="mr-auto">
 
         <Image src={logotype}
           alt="allel-logotype"
           priority="true"
-          sizes="70vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 33vw, 25vw"
           style={{
-            width: '100%',
+            width: '100px',
             height: 'auto'
           }}
           className="logotype"

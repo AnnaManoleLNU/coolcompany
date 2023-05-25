@@ -11,7 +11,7 @@ const GridImageSquare = ({ images }) => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-8">
       {images.map((image) => (
         <div key={image.src}>
-          <ImageSquare href={image.href} src={image.src} alt={image.alt} caption={image.caption} />
+          <ImageSquare href={image.href} src={image.src} alt={image.alt} caption={image.caption} forGrid={true} />
         </div>
       ))}
     </div>
