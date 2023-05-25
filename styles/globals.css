@@ -33,16 +33,29 @@
     @apply w-[100%] transition-all duration-500;
   }
 
-}
-/* Calculator styles */
-.calculator {
-  @apply flex flex-col items-center justify-center w-full h-full text-center;
+  /* Calculator styles */
+  
+  /* General calculator */
+  .calculator {
+    @apply flex flex-col items-center justify-center w-full h-full text-center;
+  }
+  
+  /* Dropdown for calculator */
+  .input-dropdown {
+    @apply bg-black text-light font-mono px-16 py-3;
+  }
+
+  .input-dropdown option {
+    @apply text-mediumP;
+  }
 }
 
-/* Input fields */
+
+/* Input fields for form */
 .input {
   @apply border-2 border-black bg-light font-mono focus:border-accent focus:outline-none px-4 py-2;
 }
+
 
 /* Remove the arrows from input type number in Firefox */
 input[type=number] {

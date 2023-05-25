@@ -6,7 +6,7 @@ const DropDownMenu = ({ title, options, selectedOption, onSelect }) => {
   return (
 
     <div className="flex flex-col justify-center items-center">
-      <label htmlFor={title} className="text-mediumH">
+      <label htmlFor={title} className="text-mediumH pb-12">
         {title}
       </label>
       <select
@@ -14,7 +14,7 @@ const DropDownMenu = ({ title, options, selectedOption, onSelect }) => {
         id={title}
         value={selectedOption || ''} // Handle null value by setting it to an empty string
         onChange={(e) => handleOptionSelect(e.target.value)}
-        className="input"
+        className="input-dropdown"
       >
         <option value="" disabled>
           --Välj--

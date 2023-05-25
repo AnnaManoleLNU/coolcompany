@@ -7,9 +7,9 @@ const PriceInfo = ({ options, price }) => {
 
       {Object.keys(options).map((optionName) => (
         <p key={optionName} >
-          {/* if the option name is Jag är don't show the option name, only the value */}
+          {/* if the option name don't show the option name, only the value */}
           {/* for the other options show option name and value */}
-          {optionName === 'Jag är' ? options[optionName] : `${optionName}: ${options[optionName]}`}
+          {optionName === 'Företag eller privat person' ? options[optionName] : `${optionName}: ${options[optionName]}`}
 
         </p>
       ))}

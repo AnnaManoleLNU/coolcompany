@@ -1,38 +1,38 @@
 import DropDownMenu from './DropDownMenu'
 import ParentPrivatperson from './ParentPrivatperson'
 import ParentForetag from './ParentForetag'
-import StartOverButton from './StartOverButton'
+// import StartOverButton from './StartOverButton'
 
 const ParentForm = ({ selectedOptions, handleSelectedOption, handleCalculate, startAgain }) => {
   return (
     <div className="flex flex-col justify-center items-center text-center">
-      {selectedOptions['Jag är'] === undefined && (
+      {selectedOptions['Företag eller privat person'] === undefined && (
         <DropDownMenu
-          title="Jag är"
+          title="Företag eller privat person"
           options={['Företag', 'Privat person']}
-          onSelect={(option) => handleSelectedOption('Jag är', option)}
+          onSelect={(option) => handleSelectedOption('Företag eller privat person', option)}
         />
       )}
 
-      {selectedOptions['Jag är'] === 'Privat person' && (
+      {selectedOptions['Företag eller privat person'] === 'Privat person' && (
         <div>
           <ParentPrivatperson
             selectedOptions={selectedOptions}
             handleSelectedOption={handleSelectedOption}
             handleCalculate={handleCalculate}
           />
-          <StartOverButton startAgain={startAgain} />
+          {/* <StartOverButton startAgain={startAgain} /> */}
         </div>
       )}
 
-      {selectedOptions['Jag är'] === 'Företag' && (
+      {selectedOptions['Företag eller privat person'] === 'Företag' && (
         <div>
           <ParentForetag
             selectedOptions={selectedOptions}
             handleSelectedOption={handleSelectedOption}
             handleCalculate={handleCalculate}
           />
-          <StartOverButton startAgain={startAgain} />
+          {/* <StartOverButton startAgain={startAgain} /> */}
         </div>
       )}
     </div>
