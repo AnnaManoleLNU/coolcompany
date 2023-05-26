@@ -36,6 +36,10 @@ const Form = () => {
       setErrorMessage('')
       // show the success message
       setSucessMessage('Tack för ditt meddelande!')
+      // and remove it on clicking in the form
+      form.addEventListener('click', () => {
+        setSucessMessage('')
+      })
     }
     if (!res.ok) {
       form.reset()
@@ -44,9 +48,9 @@ const Form = () => {
       // show the error message
       setErrorMessage('Något gick fel, försök igen!')
       // and remove it on clicking in the form
-      // form.addEventListener('click', () => {
-      //   setErrorMessage('')
-      // })
+      form.addEventListener('click', () => {
+        setErrorMessage('')
+      })
     }
   }
   return (
@@ -91,8 +95,8 @@ const Form = () => {
             className="w-full input" />
           <Button buttonText={'skicka'} />
         </form>
-      {errorMessage && <p className="text-accent">{errorMessage}</p>}
-      {sucessMessage && <p className="font-bold">{sucessMessage}</p>}
+        {errorMessage && <p className="text-accent">{errorMessage}</p>}
+        {sucessMessage && <p className="font-bold">{sucessMessage}</p>}
       </div>
     </div>
   )
