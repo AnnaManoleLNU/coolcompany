@@ -43,6 +43,10 @@ const Form = () => {
       setSucessMessage('')
       // show the error message
       setErrorMessage('Något gick fel, försök igen!')
+      // and remove it on clicking in the form
+      // form.addEventListener('click', () => {
+      //   setErrorMessage('')
+      // })
     }
   }
   return (
