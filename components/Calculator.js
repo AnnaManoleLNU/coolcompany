@@ -28,7 +28,7 @@ const Calculator = () => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center mt-36">
+    <div className="flex flex-col justify-center items-center mt-24">
       {/* if the price is not null show the p */}
       {price &&
       <div className="flex flex-col justify-center items-center">
