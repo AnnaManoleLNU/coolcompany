@@ -7,7 +7,7 @@ import Image from 'next/image'
  * @returns {HTMLElement} ImageFull.
  */
 const ImageFull = ({ src, alt }) => {
-
+  // use a custom loader to add the width and quality params to the image URL
   const imagePreloader = ({ src, width, quality }) => {
     return `${src}?w=${width}&q=${quality || 75}`
   }
