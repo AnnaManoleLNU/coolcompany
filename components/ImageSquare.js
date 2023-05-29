@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const ImageSquare = ({ href, src, alt, caption, key, forGrid = true }) => {
   const containerClass = forGrid
@@ -13,17 +14,22 @@ const ImageSquare = ({ href, src, alt, caption, key, forGrid = true }) => {
     ? 'absolute inset-0 z-10 flex justify-center items-center text-black text-center text-mediumH md:text-smallH hover:border-2 hover:border-accent'
     : 'absolute inset-0 z-10 flex justify-center items-center text-black text-center text-mediumH md:text-smallH'
 
+  const imagePreloader = ({ src, width, quality }) => {
+    return `${src}?w=${width}&q=${quality || 75}`
+  }
+
   if (!forGrid) {
     return (
       <div>
         <div className={containerClass}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={src}
+            loader={imagePreloader}
             alt={alt}
             key={key}
             fill="true"
-            // sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 33vw, 25vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 33vw, 25vw"
             className={imageClass}
           />
           <p className={paragraphClass}>
@@ -40,12 +46,13 @@ const ImageSquare = ({ href, src, alt, caption, key, forGrid = true }) => {
       <div className="flex justify-center">
         <div className={containerClass}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={src}
+            loader={imagePreloader}
             alt={alt}
             key={key}
             fill="true"
-            // sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 33vw, 25vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 33vw, 25vw"
             className={imageClass}
           />
           <p className={paragraphClass}>
