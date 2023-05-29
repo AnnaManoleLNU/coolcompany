@@ -13,15 +13,13 @@
   "dependencies": {
     "@portabletext/react": "^3.0.0",
     "@sanity/image-url": "^1.0.2",
-    "deep-email-validator": "^0.1.21",
     "eslint-config-next": "13.3.0",
     "next": "13.3.0",
     "next-sanity": "^4.1.7",
     "nodemailer": "^6.9.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-spring": "^9.7.1",
-    "reactstrap": "^9.1.10"
+    "react-spring": "^9.7.1"
   },
   "devDependencies": {
     "@lnu/eslint-config": "^1.1.7",

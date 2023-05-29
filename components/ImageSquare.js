@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const ImageSquare = ({ href, src, alt, caption, key, forGrid = true }) => {
   const containerClass = forGrid
@@ -15,15 +16,14 @@ const ImageSquare = ({ href, src, alt, caption, key, forGrid = true }) => {
 
   if (!forGrid) {
     return (
-      <div className="">
+      <div>
         <div className={containerClass}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={src}
             alt={alt}
             key={key}
-            fill="true"
-            placeholder="blur"
+            fill={true}
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 33vw, 25vw"
             className={imageClass}
           />
@@ -41,12 +41,11 @@ const ImageSquare = ({ href, src, alt, caption, key, forGrid = true }) => {
       <div className="flex justify-center">
         <div className={containerClass}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={src}
             alt={alt}
             key={key}
-            fill="true"
-            placeholder="blur"
+            fill={true}
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 33vw, 25vw"
             className={imageClass}
           />

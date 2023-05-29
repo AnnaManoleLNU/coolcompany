@@ -95,8 +95,8 @@ const Form = () => {
             className="w-full input" />
           <Button buttonText={'skicka'} />
         </form>
-        {errorMessage && <p className="text-accent">{errorMessage}</p>}
-        {sucessMessage && <p className="font-bold">{sucessMessage}</p>}
+      {errorMessage && <p className="text-accent">{errorMessage}</p>}
+      {sucessMessage && <p className="font-bold">{sucessMessage}</p>}
       </div>
     </div>
   )
