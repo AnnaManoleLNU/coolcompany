@@ -95,6 +95,7 @@ select{
     justify-content: center;
     align-items: center;
     position: fixed;
+    padding-top: 4rem;
     top: 0;
     left: 0;
     width: 100%;
@@ -112,12 +113,18 @@ select{
   .hamburger-button {
     display: block;
     cursor: pointer;
+    position: absolute;
   }
 
   .close-button {
     display: block;
     cursor: pointer;
     z-index: 51;
+    position: absolute;
+  }
+
+  nav {
+    position: relative;
   }
 
   .logotype {

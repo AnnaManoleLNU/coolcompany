@@ -1,5 +1,23 @@
 import { PortableText } from '@portabletext/react'
 
+const components = {
+  marks: {
+    // Custom renderer for the em / italics decorator
+    em: ({ children }) => <em>{children}</em>,
+
+    // Custom renderer for the strong / bold decorator
+    strong: ({ children }) => <strong className="font-bold">{children}</strong>
+  },
+
+  listItem: {
+    // bullet list
+    bullet: ({ children }) => <li className="list-disc" >{children}</li>,
+
+    // numbered list
+    number: ({ children }) => <li className="list-decimal"> {children}</li>
+  }
+}
+
 /**
  * The article component.
  *
@@ -17,7 +35,10 @@ const Article = ({ data }) => {
           >{data.title}</h1>
         </div>
         <div className="font-mono mb-4 text-smallP md:text-smallP lg:text-mediumP" key={data._id}>
-            <PortableText value={data.content} />
+            <PortableText
+            value={data.content}
+            components={components}
+             />
         </div>
       </div>
     </article>

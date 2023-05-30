@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import logotype from '../public/images/logotype-final.png'
 
@@ -18,6 +18,19 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsOpen(false)
   }
+
+  // handle resizing the window when the menu is open and close button is not used
+  const handleResize = () => {
+    if (window.innerWidth > 768) {
+      setIsOpen(false)
+    }
+  }
+
+  // add event listener for resizing the window
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <nav className="mx-auto mb-2 py-10 flex justify-end items-end text-lg font-sans lg:mb-16">

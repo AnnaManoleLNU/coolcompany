@@ -18,7 +18,7 @@ const ProjectDetails = ({ data }) => {
         <meta name="description" content={data[0].title} />
       </Head>
       <div className='flex flex-col md:flex-col md:gap-14 lg:flex-row lg:gap-20'>
-        <div className='border-l-0 lg:border-r-2 border-accent lg:pr-6'>
+        <div className='lg:border-r-2 lg:border-accent lg:pr-6'>
           <ImageSquare src={data[0].image} alt={data[0].alt} forGrid={false} />
         </div>
         {data.map((project) => (

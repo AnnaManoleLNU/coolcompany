@@ -4,7 +4,7 @@ import Image from 'next/image'
 const ImageSquare = ({ href, src, alt, caption, key, forGrid = true }) => {
   const containerClass = forGrid
     ? 'relative w-96 h-96 md:w-64 md:h-64 lg:md:w-96 lg:h-96 hover:transform hover:scale-105 hover:duration-500'
-    : 'relative w-full h-full md:w-full md:h-64 lg:md:w-96 lg:h-96'
+    : 'relative w-full h-96 md:w-full md:h-64 lg:md:w-96 lg:h-96'
 
   const imageClass = forGrid
     ? 'object-cover object-center w-full h-full filter grayscale'
