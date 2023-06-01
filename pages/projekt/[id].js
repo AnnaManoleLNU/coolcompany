@@ -25,7 +25,8 @@ const ProjectDetails = ({ data }) => {
           <Article key={project._id} data={project} />
         ))}
       </div>
-        <Button buttonText={'alla projekt'} onClick={handleOnClick} />
+      <p className='mt-2 font-mono font-bold'>Uppdragsår: {data[0].year}</p>
+      <Button buttonText={'alla projekt'} onClick={handleOnClick} />
     </main>
   )
 }

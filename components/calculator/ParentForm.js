@@ -21,7 +21,6 @@ const ParentForm = ({ selectedOptions, handleSelectedOption, handleCalculate, st
             handleSelectedOption={handleSelectedOption}
             handleCalculate={handleCalculate}
           />
-          {/* <StartOverButton startAgain={startAgain} /> */}
         </div>
       )}
 
@@ -32,7 +31,6 @@ const ParentForm = ({ selectedOptions, handleSelectedOption, handleCalculate, st
             handleSelectedOption={handleSelectedOption}
             handleCalculate={handleCalculate}
           />
-          {/* <StartOverButton startAgain={startAgain} /> */}
         </div>
       )}
     </div>

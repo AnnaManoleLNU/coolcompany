@@ -7,14 +7,15 @@ import { client } from '@/sanity/lib/sanity.client'
  * @returns {object} - The services.
  */
 export async function getProject () {
-  const query = groq`*[_type == 'projekt' ] | order(_createdAt desc) {
+  const query = groq`*[_type == 'projekt' ] | order(year desc) {
   _id,
   title,
   "slug": slug.current,
   "image": image.asset->url, 
   "alt": image.alt,
   url,
-  content
+  content,
+  year
 }`
 
   return client.fetch(query)
