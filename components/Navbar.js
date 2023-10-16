@@ -69,7 +69,7 @@ const Navbar = () => {
       </div>
       {/* Hamburger button, if the menu is not open */}
       {!isOpen && (
-        <button className="hamburger-button" onClick={toggleMenu}>
+        <button className="hamburger-button" id="hamburger-button" onClick={toggleMenu}>
           <svg viewBox="0 0 100 80" width="40" height="40">
             <rect width="100" height="15" rx="8" fill="#333333"></rect>
             <rect y="30" width="100" height="15" rx="8" fill="#333333"></rect>
@@ -79,7 +79,7 @@ const Navbar = () => {
       )}
       {/* Close button, if the menu is open */}
       {isOpen && (
-        <button className="close-button" onClick={closeMenu}>
+        <button className="close-button" id="close-button" onClick={closeMenu}>
           <svg viewBox="0 0 40 20" width="50" height="50">
             <line x1="10" y1="10" x2="30" y2="30" stroke="#f2f2f2" strokeWidth="3" />
             <line x1="30" y1="10" x2="10" y2="30" stroke="#f2f2f2" strokeWidth="3" />
