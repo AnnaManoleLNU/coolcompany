@@ -2,10 +2,8 @@ import GridImageSquare from "@/components/GridImageSquare";
 import Hero from "../components/Hero";
 import { useEffect, useState, useRef } from "react";
 import { getProject } from "@/sanity/sanity-projekt";
-import ButtonFocus from "@/components/ButtonFocus";
 import { useRouter } from "next/router";
 import ScrollUpButton from "@/components/ScrollUpButton";
-import Button from "@/components/Button";
 
 /**
  * Home page.
