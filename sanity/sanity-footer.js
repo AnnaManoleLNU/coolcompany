@@ -7,7 +7,7 @@ import { client } from '@/sanity/lib/sanity.client'
  * @returns {object} - The footer schema.
  */
 export async function getFooter () {
-  const query = groq`*[_type == 'kontakt' && title == 'Kontoret']  {
+  const query = groq`*[_type == 'kontakt']  {
   _id,
   content
 }`
