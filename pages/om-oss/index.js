@@ -21,8 +21,8 @@ const About = () => {
   return (
     <main>
       <Head>
-        <title>Allel - Om oss</title>
-        <meta name="description" content="Allel - Om oss" />
+        <title>Ditt företag - Om oss</title>
+        <meta name="description" content="Ditt företag - Om oss" />
       </Head>
       {/* create an article for each object in the array */}
       {aboutData.map((data, index) => (

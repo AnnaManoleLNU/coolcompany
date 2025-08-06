@@ -22,8 +22,8 @@ const Contact = () => {
   return (
     <main>
       <Head>
-        <title>Allel - Kontakt</title>
-        <meta name="description" content="Allel - Kontakt" />
+        <title>Ditt företag - Kontakt</title>
+        <meta name="description" content="Ditt företag - Kontakt" />
       </Head>
       <div className='block lg:flex'>
         <div className='flex-1 '>

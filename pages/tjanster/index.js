@@ -30,8 +30,8 @@ const Services = () => {
   return (
     <main>
       <Head>
-        <title>Allel - Tjänster</title>
-        <meta name="description" content="Allel - Tjänster" />
+        <title>Ditt företag - Tjänster</title>
+        <meta name="description" content="Ditt företag - Tjänster" />
       </Head>
       <GridImageSquare images={images} />
     </main>

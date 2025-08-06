@@ -30,8 +30,8 @@ const Project = () => {
   return (
     <main>
       <Head>
-        <title>Allel - Projekt</title>
-        <meta name="description" content="Allel - Projekt" />
+        <title>Ditt företag - Projekt</title>
+        <meta name="description" content="Ditt företag - Projekt" />
       </Head>
       <GridImageSquare images={images} />
     </main>

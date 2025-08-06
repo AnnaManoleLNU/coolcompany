@@ -53,9 +53,6 @@ const Navbar = () => {
         <Link href="/tjanster" className="nav-item" onClick={closeMenu}>
           tjänster
         </Link>
-        <Link href="/kalkylator" className="nav-item" onClick={closeMenu}>
-          kalkylator
-        </Link>
         <Link href="/projekt" className="nav-item" onClick={closeMenu}>
           projekt
         </Link>
