@@ -14,7 +14,7 @@ const ProjectDetails = ({ data }) => {
   return (
     <main>
       <Head>
-        <title>Allel - {data[0].title}</title>
+        <title>Ditt företag - {data[0].title}</title>
         <meta name="description" content={data[0].title} />
       </Head>
       <div className='flex flex-col md:flex-col md:gap-14 lg:flex-row lg:gap-20'>
