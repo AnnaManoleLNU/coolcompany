@@ -36,7 +36,7 @@ const Navbar = () => {
     <nav className="mx-auto mb-2 py-10 flex justify-end items-end text-lg font-sans lg:mb-16">
       <Link href="/" className="mr-auto">
         <Image src={logotype}
-          alt="allel-logotype"
+          alt="cms-logotype"
           priority="true"
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 33vw, 25vw"
           style={{
