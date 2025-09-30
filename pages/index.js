@@ -23,8 +23,8 @@ export default function Home() {
     fetchData();
   }, []);
 
-  // get the first 4 projects
-  const images = projectData.slice(0, 4).map((project) => ({
+  // get the first 5 projects
+  const images = projectData.slice(0, 5).map((project) => ({
     href: `/projekt/${project.slug}`,
     src: project.image,
     alt: project.title,
